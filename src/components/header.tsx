@@ -21,7 +21,7 @@ export function Header({title, cartQuantityItems = 0} : HeaderProps){
                     <Text className="text-slate-900 font-bold text-xs">{cartQuantityItems}</Text>
 
                 </View>
-                <Feather name="shopping-bag" color={colors.white} size={24}></Feather>
+                <Feather name="shopping-bag" color={colors.white} size={24}/>
             </TouchableOpacity>)}
         </View>
     )
