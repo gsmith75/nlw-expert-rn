@@ -6,16 +6,16 @@ import { Link } from "expo-router";
 
 import {View, FlatList, SectionList, Text} from "react-native";
 
-import {CATEGORIES, MENU} from "@/utils/data/products";
+import {CATEGORIES, MENU, ProductProps} from "@/utils/data/products";
 
 import { useState, useRef } from "react";
 import { useCartStore } from "@/stores/cart-store";
 
 export default function Home(){
-    const cartStore = useCartStore()
+    const cartStore = useCartStore();
     const [category, setCategory] = useState(CATEGORIES[0]);
 
-    const sectionListRef = useRef<SectionList>(null)
+    const sectionListRef = useRef<SectionList<ProductProps>>(null);
 
     const cartQuantityItems = cartStore.products.reduce((total, product) => total + product.quantity, 0)
 
